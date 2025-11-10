@@ -21,7 +21,7 @@ libevent:
 liblzma_devel:
 - '5'
 openssl:
-- '3'
+- '3.5'
 target_platform:
 - linux-64
 zip_keys:
