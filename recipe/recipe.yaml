@@ -1,6 +1,6 @@
 context:
   name: tor
-  version: "0.4.8.24"
+  version: "0.4.8.25"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://www.torproject.org/dist/${{ name }}-${{ version }}.tar.gz
-  sha256: 411d083f9047bcd39f31bb316dd0a537fb2566fbed02cbfc0e6464528526743a
+  sha256: 371cd22178fa4b35e64b03933403890795ce3e304c5850a5b59adcc68820a799
 
 build:
   skip:
