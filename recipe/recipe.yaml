@@ -13,17 +13,14 @@ source:
 build:
   skip:
     - win
-  number: 0
+  number: 1
   script:
     - if: osx
       then:
         # config.sub is outdated so we need to regenerate it
         - autoreconf -fiv
-    - if: linux
-      then:
-        # https://gitlab.torproject.org/tpo/core/tor/-/blob/tor-0.4.8.16/src/lib/log/util_bug.h#L56
-        - export CPPFLAGS="${CPPFLAGS/-DNDEBUG/}"
-        - echo $CPPFLAGS
+    # https://gitlab.torproject.org/tpo/core/tor/-/blob/tor-0.4.8.16/src/lib/log/util_bug.h#L56
+    - export CPPFLAGS="${CPPFLAGS/-DNDEBUG/}"
     - ./configure --prefix="$PREFIX"${{ ' --disable-tool-name-check' if build_platform != target_platform else '' }}
     - make install
 
@@ -33,7 +30,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
     - make
-    - pkg-config
+    - pkgconf
     - if: osx
       then:
         - autoconf
