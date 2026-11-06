@@ -13,7 +13,7 @@ source:
 build:
   skip:
     - win
-  number: 0
+  number: 1
   script:
     - if: osx
       then:
@@ -33,7 +33,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
     - make
-    - pkg-config
+    - pkgconf
     - if: osx
       then:
         - autoconf
