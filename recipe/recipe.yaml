@@ -13,7 +13,7 @@ source:
 build:
   skip:
     - win
-  number: 2
+  number: 3
   script:
     - if: osx
       then:
